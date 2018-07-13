@@ -1,0 +1,25 @@
+boolean pinsEnable = true
+
+if (project.ext.has("p_enable")) {
+    pinsEnable = (boolean) project.ext.getProperty("p_enable")
+}
+
+if (pinsEnable) {
+    android.sourceSets {
+
+        main {
+            manifest.srcFile 'src/p_base/main/AndroidManifest.xml'
+            project.ext.pins.each { dir ->
+                java.srcDir("src/${dir}/main/java")
+                res.srcDir("src/${dir}/main/res")
+
+                resources.srcDir("src/${dir}/main/java")
+                aidl.srcDir("src/${dir}/main/java")
+                renderscript.srcDir("src/${dir}/main/java")
+
+                assets.srcDir("src/${dir}/main/assets")
+                jniLibs.srcDir("src/${dir}/main/jniLibs")
+            }
+        }
+    }
+}
