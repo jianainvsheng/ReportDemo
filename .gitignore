@@ -16,7 +16,8 @@ out/
 # Gradle files
 .gradle/
 build/
-
+/gradlew
+/gradlew.bat
 # Local configuration file (sdk path, etc)
 local.properties
 
@@ -63,3 +64,7 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+.idea/modules/
+app/libs/
+reportmodle/libs/
+reportmodle/src/main/res/drawable/
