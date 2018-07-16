@@ -8,6 +8,7 @@ import com.report.demo.business.event.TopEvent
 import com.report.demo.business.holder.BottomHolder
 import com.report.demo.business.holder.TopHolder
 import com.report.demo.imessage.event.BaseEvent
+import com.report.reportmodle.manager.ReportManager
 
 /**
  * Created by yangjian on 2018/7/13.
@@ -43,5 +44,10 @@ class MainActivity :BaseActivity(){
                 mBottomHolder.setListViewTop()
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ReportManager.getIntance().unregisterActivity(application)
     }
 }
